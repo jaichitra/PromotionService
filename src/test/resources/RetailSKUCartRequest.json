@@ -1,0 +1,32 @@
+{
+  "products" : [ {
+    "retailSKUItem" : {
+      "itemName" : "A",
+      "itemCode" : "A",
+      "itemPrice" : 50.0
+    },
+    "quantity" : 3
+  }, {
+    "retailSKUItem" : {
+      "itemName" : "B",
+      "itemCode" : "B",
+      "itemPrice" : 30.0
+    },
+    "quantity" : 5
+  }, {
+    "retailSKUItem" : {
+      "itemName" : "C",
+      "itemCode" : "C",
+      "itemPrice" : 20.0
+    },
+    "quantity" : 1
+  }, {
+    "retailSKUItem" : {
+      "itemName" : "D",
+      "itemCode" : "D",
+      "itemPrice" : 15.0
+    },
+    "quantity" : 1
+  } ],
+  "activePromotions" : [ "FIXED_PRICE_FOR_SKU_A", "FIXED_PRICE_FOR_SKU_B", "COMBINED_PRICE_FOR_SKU_C_AND_D" ]
+}

@@ -1,10 +1,14 @@
 package com.jaichitra.promotionservice.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RetailSKUCartSummary {
+    @JsonProperty
     private List<RetailSKUCartUnit> cartUnits;
+    @JsonProperty
     private double totalFinalPrice;
 
     public RetailSKUCartSummary() {

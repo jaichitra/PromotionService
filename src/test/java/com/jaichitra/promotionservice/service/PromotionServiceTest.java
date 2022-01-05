@@ -1,5 +1,6 @@
 package com.jaichitra.promotionservice.service;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.jaichitra.promotionservice.data.RetailSKUCartRequest;
 import com.jaichitra.promotionservice.data.RetailSKUCartSummary;
@@ -16,7 +17,8 @@ public class PromotionServiceTest {
 
     @Before
     public void init() {
-        promotionService = new PromotionService();
+        promotionService = new PromotionService(ImmutableList.of(new CombinedPricePromotionForCandD(), new FixedPricePromotionForA(),
+                new FixedPricePromotionForB()));
     }
 
     @Test

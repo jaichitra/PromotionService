@@ -12,11 +12,12 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Component
 public class PromotionService {
-
+    private static final Logger LOG = Logger.getLogger(PromotionService.class.getName());
     private final List<PromotionStrategy> promotionStrategies;
 
     @Autowired
@@ -32,6 +33,10 @@ public class PromotionService {
      * @return
      */
     public RetailSKUCartSummary execute(final RetailSKUCartRequest cartRequest) {
+        LOG.info("Executing cartRequest for cart size : " + cartRequest.getProducts().size());
+        LOG.info("Applicable Promotions in Request : " + (cartRequest.getActivePromotions() == null ? "NULL"
+                : cartRequest.getActivePromotions().toString()));
+
         final RetailSKUCartSummary cartSummary = new RetailSKUCartSummary();
         final List<String> activePromotions = cartRequest.getActivePromotions();
 
@@ -43,6 +48,7 @@ public class PromotionService {
                     .forEach(t -> t.applyPromotions(cartUnits));
 
         cartUnits.forEach(t -> cartSummary.addToCart(t));
+        LOG.info("Cart Summary, total final price : " + cartSummary.getTotalFinalPrice());
         return cartSummary;
     }
 

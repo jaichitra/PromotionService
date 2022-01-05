@@ -12,12 +12,14 @@ import java.util.logging.Logger;
 
 @RestController
 public class PromotionServiceController {
+    private static final Logger LOG = Logger.getLogger(PromotionServiceController.class.getName());
 
     @Autowired
     private PromotionService promotionService;
 
     @PostMapping(value = "/promotionService",consumes = "application/json")
     public RetailSKUCartSummary getSiteDetails(@RequestBody RetailSKUCartRequest request) {
+        LOG.info("Controller request received for RetailSKUCartRequest");
         return promotionService.execute(request);
     }
 

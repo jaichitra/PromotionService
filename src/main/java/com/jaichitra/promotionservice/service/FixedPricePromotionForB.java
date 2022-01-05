@@ -15,9 +15,9 @@ public class FixedPricePromotionForB implements PromotionStrategy{
 
         if (cartUnitB == null || cartUnitB.getPromotionApplied()) return;
 
-        int promotionalValue = cartUnitB.getItemQuantity() / 3;
+        int promotionalValue = cartUnitB.getItemQuantity() / 2;
         cartUnitB.setFinalPrice(promotionalValue * promotionalPriceOfCombination +
-                (cartUnitB.getItemQuantity() % 3 * cartUnitB.getCartItem().getItemPrice()));
+                (cartUnitB.getItemQuantity() % 2 * cartUnitB.getCartItem().getItemPrice()));
 
         cartUnitB.setPromotionType(promotionType());
         cartUnitB.setPromotionApplied(true);

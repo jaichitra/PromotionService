@@ -7,12 +7,14 @@ import com.jaichitra.promotionservice.data.RetailSKUCartUnit;
 import com.jaichitra.promotionservice.data.RetailSKUItem;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Component
 public class PromotionService {
 
     private final List<PromotionStrategy> promotionStrategies;
